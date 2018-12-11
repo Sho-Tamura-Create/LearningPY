@@ -33,7 +33,7 @@ def is_collaz(n):
             return len(get_arr)
 
 def is_rank(new,old):
-    if new >= old:
+    if new > old:
         return True
     return False
 
