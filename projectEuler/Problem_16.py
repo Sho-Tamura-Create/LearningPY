@@ -14,5 +14,4 @@ while True:
     if len(arr) >= len(num_arr):
         break
     n += 1
-    
 print (sum(arr))
