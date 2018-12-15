@@ -5,13 +5,16 @@
 What is the sum of the digits of the number 21000?
 
 '''
-num_arr = str(max([2 ** i for i in range(1,1001)]))
+#num_arr = str(max([2 ** i for i in range(1,1001)]))
+#n = 0
+#arr = []
+#while True:
+#    arr.append(int(num_arr[n]))
+#    if len(arr) >= len(num_arr):
+#        break
+#    n += 1
+#print (sum(arr))
 
-n = 0
-arr = []
-while True:
-    arr.append(int(num_arr[n]))
-    if len(arr) >= len(num_arr):
-        break
-    n += 1
-print (sum(arr))
+num_arr = str(2 ** 1000)
+arr = sum([int(num_arr[n]) for n in range(0,len(num_arr))])
+print(arr)
