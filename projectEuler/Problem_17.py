@@ -1,0 +1,39 @@
+'''
+2018/12/16
+
+If the numbers 1 to 5 are written out in words: one, two, three, four, five, then there are 3 + 3 + 5 + 4 + 4 = 19 letters used in total.
+If all the numbers from 1 to 1000 (one thousand) inclusive were written out in words, how many letters would be used?
+
+NOTE: Do not count spaces or hyphens. For example, 342 (three hundred and forty-two) contains 23 letters and 115 (one hundred and fifteen) contains 20 letters. The use of "and" when writing out numbers is in compliance with British usage.
+'''
+
+num_dict = {1:'one',2:'two',3:'three',4:'four',5:'five',
+            6:'six',7:'seven',8:'eight',9:'nine',10:'ten',
+            11:'eleven',12:'twelve',13:'thirteen',14:'fourteen',15:'fifteen',
+            16:'sixteen',17:'seventeen',18:'eighteen',19:'nineteen',20:'twenty',
+            30:'thirty',40:'forty',50:'fifty',60:'sixty',70:'seventy',
+            80:'eighty',90:'ninety',1000:'one thousand'}
+
+def numTowords(num):
+    if num in num_dict:
+        return num_dict[num]
+    elif num < 100:
+        n1 = num % 10
+        n10 = (num // 10)*10
+        return numTowords(n10) + " " + numTowords(n1)
+    else:
+        n1 = num % 100
+        n10 = num // 100
+        if n1 == 0:
+            return numTowords(n10) + " hundred" 
+        else:
+            return numTowords(n10) + " hundred and " + numTowords(n1)
+
+def resetChar(w):
+    return len(w.replace(" ",""))
+
+word_list = [numTowords(n) for n in range(1,1001)]
+sum_words = sum([resetChar(word_list[i]) for i in range(0,len(word_list))])
+
+#print(word_list)
+print(sum_words)
