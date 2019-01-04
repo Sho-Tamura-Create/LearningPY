@@ -23,5 +23,5 @@ def sumSquare(n):
 
     return [rd,ld,lu,ru]
 
-fix = sum([sum(sumSquare(x)) for x in range(1,501)])+1
+fix = sum([sum(sumSquare(x)) for x in range(0,500)])+1
 print(fix)
