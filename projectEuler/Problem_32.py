@@ -20,6 +20,5 @@ def pandigital(num1,num2,num3,num4):
 
 fix_s = set(pandigital(1,9,1234,9876))
 fix_b = set(pandigital(12,98,123,987))
-print(fix_s)
-print(fix_b)
+
 print(sum(fix_s) + sum(fix_b))
