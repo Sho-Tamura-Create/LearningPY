@@ -9,11 +9,11 @@ d1 × d10 × d100 × d1000 × d10000 × d100000 × d1000000
 
 '''
 from functools import reduce
-from operator import add, mul
+from operator import mul
 
 n = 1
 pickup = []
-arr = ''.join(list(str(i) for i in range(0,1000001)))
+arr = ''.join(list(str(i) for i in range(0,200000)))
 
 while True:
     pickup.append(int(arr[n]))
@@ -24,3 +24,4 @@ while True:
 
 print(pickup)
 print(ans)
+print(len(arr))
